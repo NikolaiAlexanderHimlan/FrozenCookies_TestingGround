@@ -5,8 +5,8 @@
 // @author         shinji257
 // @homepage       https://github.com/Icehawk78/FrozenCookies
 // @include        http://orteil.dashnet.org/cookieclicker/
-// @updateURL      http://icehawk78.github.io/FrozenCookies/fc_userscript_loader.js
-// @downloadURL    http://icehawk78.github.io/FrozenCookies/fc_userscript_loader.js
+// @updateURL      https://raw.githubusercontent.com/NikolaiAlexanderHimlan/FrozenCookies_TestingGround/test-pages/fc_userscript_loader.user.js
+// @downloadURL    https://raw.githubusercontent.com/NikolaiAlexanderHimlan/FrozenCookies_TestingGround/test-pages/fc_userscript_loader.user.js
 // ==/UserScript==
 
 // Dev:       https://raw.github.com/Icehawk78/FrozenCookies/development/
@@ -17,7 +17,7 @@ function LoadFrozenCookies() {
   var js = document.createElement('script');
   js.setAttribute('type', 'text/javascript');
   js.setAttribute('id', 'frozenCookieScript');
-  js.setAttribute('src', 'http://icehawk78.github.io/FrozenCookies/frozen_cookies.js');
+  js.setAttribute('src', 'https://raw.githubusercontent.com/NikolaiAlexanderHimlan/FrozenCookies_TestingGround/test-pages/frozen_cookies.js');
   document.head.appendChild(js);
 }
 // It's not the best way but Chrome doesn't work with addEventListener... :(
