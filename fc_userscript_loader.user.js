@@ -1,5 +1,6 @@
 // ==UserScript==
 // @name           Frozen Cookies
+// @icon           http://orteil.dashnet.org/cookieclicker/img/goldCookie.png
 // @version        github-latest
 // @description    Userscript to load Frozen Cookies written by Icehawk78
 // @author         shinji257
@@ -21,5 +22,5 @@ function LoadFrozenCookies() {
   document.head.appendChild(js);
 }
 // It's not the best way but Chrome doesn't work with addEventListener... :(
-// Delay load by 2 seconds to allow the site to load itself first.)
-window.setTimeout(LoadFrozenCookies, 2000);
+// Delay load by 5 seconds to allow the site to load itself first.)
+window.setTimeout(LoadFrozenCookies, 5000);

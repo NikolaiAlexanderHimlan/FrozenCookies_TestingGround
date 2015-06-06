@@ -253,7 +253,7 @@ var blacklist = [
   },
   //Avoids all Grandmapocalypse earlier
   {
-    'upgrades': [70, 71, 72, 73, 74, 84, 85],
+    'upgrades': [69, 71, 72, 73, 74, 84, 85],
     'buildings': []
   },
   {
