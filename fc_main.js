@@ -912,6 +912,7 @@ function isUnavailable(upgrade, upgradeBlacklist) {
   result = result || _.contains(upgradeBlacklist, upgrade.id);
   result = result || (needed && _.find(needed, function(a){return a.type == "wrinklers"}) != null);
   result = result || (upgrade.season && !haveAll(Game.season));
+  console.log('id ' + upgrade.id);
   return result;
 }
 
