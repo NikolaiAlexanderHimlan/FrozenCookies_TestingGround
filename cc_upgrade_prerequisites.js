@@ -38,7 +38,7 @@ FrozenCookies.preferenceValues = {
   },
   'blacklist':{
     'hint':'Blacklist purchases from the efficiency calculations',
-    'display':['No Blacklist', 'Speedrun Blacklist', 'Hardcore Blacklist', 'Grandmapocalypse Mode', 'Grandmapocalypse Mode (Early)', 'No Buildings'],
+    'display':['No Blacklist', 'Speedrun Blacklist', 'Hardcore Blacklist', 'Grandmapocalypse Mode', 'Bad Grandmapocalypse', 'No Buildings'],
     'default':0
   },
 /*  'timeTravelMethod':{
@@ -251,7 +251,7 @@ var blacklist = [
     'upgrades': [71, 72, 73, 74, 84, 85],
     'buildings': []
   },
-  //Avoids all Grandmapocalypse upgrades
+  //Avoids all Grandmapocalypse earlier
   {
     'upgrades': [70, 71, 72, 73, 74, 84, 85],
     'buildings': []
