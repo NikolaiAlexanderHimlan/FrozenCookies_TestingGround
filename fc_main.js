@@ -772,7 +772,12 @@ function checkPrices(currentUpgrade) {
 function purchaseEfficiency(price, deltaCps, baseDeltaCps, currentCps) {
   var efficiency = Number.POSITIVE_INFINITY;
   if (deltaCps > 0) {
-    efficiency = FrozenCookies.efficiencyWeight * divCps(price, currentCps) + divCps(price, deltaCps);
+    if (currentCps > price) {
+      efficiency = 0.01;
+    }
+    else {
+      efficiency = FrozenCookies.efficiencyWeight * divCps(price, currentCps) + divCps(price, deltaCps);
+    }
   }
   return efficiency;
 }
