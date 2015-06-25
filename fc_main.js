@@ -473,6 +473,10 @@ function baseCps() {
   return Game.cookiesPs / frenzyMod;
 }
 
+function curCps() {
+  return Game.cookiesPs;
+}
+
 function baseClickingCps(clickSpeed) {
   var clickFrenzyMod = (Game.clickFrenzy > 0) ? 777 : 1;
   var frenzyMod = (Game.frenzy > 0) ? Game.frenzyPower : 1;
@@ -772,7 +776,7 @@ function checkPrices(currentUpgrade) {
 function purchaseEfficiency(price, deltaCps, baseDeltaCps, currentCps) {
   var efficiency = Number.POSITIVE_INFINITY;
   if (deltaCps > 0) {
-    if (currentCps > price) {
+    if (curCps() > price) {
       efficiency = 0.01;
     }
     else {
@@ -870,8 +874,8 @@ function buildingStats(recalculate) {
       buildingToggle(current, existingAchievements);
       var deltaCps = cpsNew - cpsOrig;
       var baseDeltaCps = baseCpsNew - baseCpsOrig;
-      // var efficiency = purchaseEfficiency(current.getPrice(), deltaCps, baseDeltaCps, cpsOrig)
-      var efficiency = purchaseEfficiency(current.getPrice(), deltaCps, baseDeltaCps, baseCpsOrig)
+      var efficiency = purchaseEfficiency(current.getPrice(), deltaCps, baseDeltaCps, cpsOrig)
+      // var efficiency = purchaseEfficiency(current.getPrice(), deltaCps, baseDeltaCps, baseCpsOrig)
       return {'id' : current.id, 'efficiency' : efficiency, 'base_delta_cps' : baseDeltaCps, 'delta_cps' : deltaCps, 'cost' : current.getPrice(), 'purchase' : current, 'type' : 'building'};
     }).filter(function(a){return a;});
   }
