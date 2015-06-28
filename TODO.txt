@@ -1,0 +1,16 @@
+*purchasing all upgrades below current CPS needs a name [named]
+
+	-want to be able to compare price to CPS over a certain period of seconds {1, 2, 3, 4, 5, 10, 15, 30, 60]
+
+	-replace 0.01 efficiency with calculation so items with higher CPS are more efficient. (divide 1 by the delta-cps?)
+
+	-be able to toggle this mode
+
+	-be able to choose whether to use baseCps or curCps (affected by frenzy)
+
+	-properly handle wrinkler modifier (currently uses CPS, ignoring wrinklers)
+
+*pop oldest wrinkler
+
+
+

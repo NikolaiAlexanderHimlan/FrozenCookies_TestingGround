@@ -10,8 +10,8 @@ FrozenCookies.preferenceValues = {
     'default':0
   },
   'autoWrinkler':{
-    'hint':'Automatically pop wrinklers efficiently (as fast as possible before you have all halloween cookies, then wait until a purchase)',
-    'display':['Autopop Wrinklers OFF', 'Autopop Wrinklers ON'],
+    'hint':'Automatically pop wrinklers efficiently (as fast as possible before you have all halloween/easter cookies, then wait until a purchase)',
+    'display':['Autopop Wrinklers OFF', 'Autopop Wrinklers ON', 'Autopop Wrinklers Oldest'],
     'default':0
   },
   'autoReindeer':{
@@ -56,6 +56,11 @@ FrozenCookies.preferenceValues = {
     'hint':'What percentage of Golden Cookies should be assumed as "clicked" for GC efficiency calculations (100% recommended)',
     'display':["0%","100%"],
     'default':1
+  },
+  'instantPrice':{
+    'hint':'Purchases costing less than the current CPS are considered extremely efficient.',
+	'display':['Instant Price Off', 'Instant Price On', 'Instant Price Autobuy'],
+	'default':0
   },
   'logging':{
     'hint':'Display detailed logs in the javascript console.',

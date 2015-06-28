@@ -776,7 +776,7 @@ function checkPrices(currentUpgrade) {
 function purchaseEfficiency(price, deltaCps, baseDeltaCps, currentCps) {
   var efficiency = Number.POSITIVE_INFINITY;
   if (deltaCps > 0) {
-    if (curCps() > price) {
+    if (FrozenCookies.instantPrice && curCps() > price) {
       efficiency = 0.01;
     }
     else {
