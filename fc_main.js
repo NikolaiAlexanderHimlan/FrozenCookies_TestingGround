@@ -393,6 +393,23 @@ function updateSpeed(base) {
   }
 }
 
+function getCpsWeight(current) {
+  var newWeight = prompt('How much do you want current CPS to affect efficiency calculations (1.0 is default)',current);
+  if (typeof(newWeight) == 'undefined' || newWeight == null || isNaN(Number(newWeight)) || Number(newWeight) < 0 || Number(newWeight) > 250) {
+    newWeight = current;
+  }
+  return Number(newWeight);
+}
+
+function updateCpsWeight(base) {
+  var newWeight = getWeight(FrozenCookies[base]);
+  if (newWeight != FrozenCookies[base]) {
+    FrozenCookies[base] = newWeight;
+    updateLocalStorage();
+    FCStart();
+  }
+}
+
 function updateTimeTravelAmount() {
   var newAmount = prompt("Warning: Time travel is highly unstable, and large values are highly likely to either cause long delays or crash the game. Be careful!\nHow much do you want to time travel by? This will happen instantly.");
   if (typeof(newAmount) === 'undefined' || newAmount === null || isNaN(Number(newAmount)) || Number(newAmount) < 0) {
