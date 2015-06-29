@@ -22,7 +22,7 @@ function setOverrides() {
   logEvent("Load", "Initial Load of Frozen Cookies v " + FrozenCookies.branch + "." + FrozenCookies.version + ". (You should only ever see this once.)");
 
   FrozenCookies.frequency = 100;
-  FrozenCookies.efficiencyWeight = 1.0;
+  FrozenCookies.efficiencyWeight = 3.0;//TODO: change back to 1.0 (as default) once button in working
   
   // Separate because these are user-input values
   FrozenCookies.cookieClickSpeed = preferenceParse('cookieClickSpeed',0);
@@ -794,7 +794,8 @@ function purchaseEfficiency(price, deltaCps, baseDeltaCps, currentCps) {
   var efficiency = Number.POSITIVE_INFINITY;
   if (deltaCps > 0) {
     if (FrozenCookies.instantPrice && curCps() > price) {
-      efficiency = 0.01;
+      //efficiency = 0.01;
+	  efficiency = 1.0 / deltaCps;
     }
     else {
       efficiency = FrozenCookies.efficiencyWeight * divCps(price, currentCps) + divCps(price, deltaCps);
