@@ -794,8 +794,8 @@ function purchaseEfficiency(price, deltaCps, baseDeltaCps, currentCps) {
   var efficiency = Number.POSITIVE_INFINITY;
   if (deltaCps > 0) {
     if (FrozenCookies.instantPrice && curCps() > price) {
-      //efficiency = 0.01;
-	  efficiency = 1.0 / deltaCps;
+      efficiency = 0.01;
+	  //efficiency = 1.0 / deltaCps;
     }
     else {
       efficiency = FrozenCookies.efficiencyWeight * divCps(price, currentCps) + divCps(price, deltaCps);
