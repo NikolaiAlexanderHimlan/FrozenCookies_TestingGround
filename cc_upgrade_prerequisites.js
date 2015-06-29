@@ -66,7 +66,7 @@ FrozenCookies.preferenceValues = {
     'hint':'How much affect the current CPS has on efficiency calculations.',
     'display':['CPS Weight', 'CPS Weight'],
     'default':1.0,
-    'extras':'<a class="option" id="efficiencyCurCpsWeight" onclick="updateCpsWeight(\'efficiencyCurCpsWeight\');">${efficiencyCurCpsWeight} weighted</a>'
+    'extras':'<a class="option" id="efficiencyWeight" onclick="updateCpsWeight(\'efficiencyWeight\');">${efficiencyWeight} weighted</a>'
   },
   'logging':{
     'hint':'Display detailed logs in the javascript console.',
