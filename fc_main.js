@@ -22,7 +22,8 @@ function setOverrides() {
   logEvent("Load", "Initial Load of Frozen Cookies v " + FrozenCookies.branch + "." + FrozenCookies.version + ". (You should only ever see this once.)");
 
   FrozenCookies.frequency = 100;
-  FrozenCookies.efficiencyWeight = 3.0;//TODO: change back to 1.0 (as default) once button in working
+  //FrozenCookies.efficiencyWeight = 3.0;//TODO: change back to 1.0 (as default) once button in working
+  FrozenCookies.efficiencyWeight = preferenceParse('efficiencyWeight',0);
   
   // Separate because these are user-input values
   FrozenCookies.cookieClickSpeed = preferenceParse('cookieClickSpeed',0);
@@ -297,6 +298,7 @@ function updateLocalStorage() {
     localStorage[preference] = FrozenCookies[preference];
   });
   
+  localStorage.efficiencyWeight = FrozenCookies.efficiencyWeight;
   localStorage.frenzyClickSpeed = FrozenCookies.frenzyClickSpeed;
   localStorage.cookieClickSpeed = FrozenCookies.cookieClickSpeed;
   localStorage.frenzyTimes = JSON.stringify(FrozenCookies.frenzyTimes);
@@ -402,7 +404,7 @@ function getCpsWeight(current) {
 }
 
 function updateCpsWeight(base) {
-  var newWeight = getWeight(FrozenCookies[base]);
+  var newWeight = getCpsWeight(FrozenCookies[base]);
   if (newWeight != FrozenCookies[base]) {
     FrozenCookies[base] = newWeight;
     updateLocalStorage();
