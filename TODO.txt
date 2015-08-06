@@ -10,7 +10,11 @@
 
 	-properly handle wrinkler modifier (currently uses CPS, ignoring wrinklers)
 
-*pop oldest wrinkler
+*pop most valuable/oldest wrinkler (because the contents of a wrinkler aren't as important as the amount)
+	-start by keeping a counter and cycling through wrinklers for popping.
+
+*if cost is more than max-bank, double efficiency calculation
+
 
 
 

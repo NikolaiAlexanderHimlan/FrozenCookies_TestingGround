@@ -11,7 +11,7 @@ FrozenCookies.preferenceValues = {
   },
   'autoWrinkler':{
     'hint':'Automatically pop wrinklers efficiently (as fast as possible before you have all halloween/easter cookies, then wait until a purchase)',
-    'display':['Autopop Wrinklers OFF', 'Autopop Wrinklers ON', 'Autopop Wrinklers Oldest'],
+    'display':['Autopop Wrinklers OFF', 'Autopop Wrinklers ON', 'Autopop Oldest Wrinkler'],
     'default':0
   },
   'autoReindeer':{
@@ -60,6 +60,11 @@ FrozenCookies.preferenceValues = {
   'instantPrice':{
     'hint':'Purchases costing less than the current CPS are considered extremely efficient.',
 	'display':['Instant Price Off', 'Instant Price On', 'Instant Price Autobuy'],
+	'default':0
+  },
+  'bankLimiter':{
+    'hint':'Purchases costing more than the current bank are considered less (x2) efficient.',
+	'display':['Bank Limiter Off', 'Bank Limiter On'],
 	'default':0
   },
   'cpsWeight':{

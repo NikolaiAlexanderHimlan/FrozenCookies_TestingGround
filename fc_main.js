@@ -679,6 +679,18 @@ function chainBank() {
 //  return baseCps() * 60 * 60 * 6 * 4;
 }
 
+function maxBank() {
+	delayAmount();//seems this gives the bank value?
+	/*Manual pick
+	var luck = luckyBank();
+	var chain = chainBank();
+	if(luck > chain)
+		return luck;
+	else
+		return chain;
+	//*/
+}
+
 function cookieEfficiency(startingPoint, bankAmount) {
   var results = Number.MAX_VALUE;
   var currentValue = cookieValue(startingPoint);
@@ -802,6 +814,9 @@ function purchaseEfficiency(price, deltaCps, baseDeltaCps, currentCps) {
     else {
       efficiency = FrozenCookies.efficiencyWeight * divCps(price, currentCps) + divCps(price, deltaCps);
     }
+	if (FrozenCookies.bankLimiter && maxBank() > price) {
+	  efficiency = efficiency * 2;
+	}
   }
   return efficiency;
 }
