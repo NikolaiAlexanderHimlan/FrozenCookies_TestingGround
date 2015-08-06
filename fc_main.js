@@ -680,8 +680,8 @@ function chainBank() {
 }
 
 function maxBank() {
-	delayAmount();//seems this gives the bank value?
-	/*Manual pick
+	//delayAmount();//seems this gives the bank value?
+	//*Manual pick
 	var luck = luckyBank();
 	var chain = chainBank();
 	if(luck > chain)
