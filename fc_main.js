@@ -24,6 +24,7 @@ function setOverrides() {
   FrozenCookies.frequency = 100;
   //FrozenCookies.efficiencyWeight = 3.0;//TODO: change back to 1.0 (as default) once button in working
   FrozenCookies.efficiencyWeight = preferenceParse('efficiencyWeight',0);
+  FrozenCookies.bankWeight = preferenceParse('bankWeight',0);
   
   // Separate because these are user-input values
   FrozenCookies.cookieClickSpeed = preferenceParse('cookieClickSpeed',0);
@@ -299,6 +300,7 @@ function updateLocalStorage() {
   });
   
   localStorage.efficiencyWeight = FrozenCookies.efficiencyWeight;
+  localStorage.bankWeight = FrozenCookies.bankWeight;
   localStorage.frenzyClickSpeed = FrozenCookies.frenzyClickSpeed;
   localStorage.cookieClickSpeed = FrozenCookies.cookieClickSpeed;
   localStorage.frenzyTimes = JSON.stringify(FrozenCookies.frenzyTimes);
@@ -405,6 +407,23 @@ function getCpsWeight(current) {
 
 function updateCpsWeight(base) {
   var newWeight = getCpsWeight(FrozenCookies[base]);
+  if (newWeight != FrozenCookies[base]) {
+    FrozenCookies[base] = newWeight;
+    updateLocalStorage();
+    FCStart();
+  }
+}
+
+function getBankWeight(current) {
+  var newWeight = prompt('How much do you want cost being greater than max bank to affect efficiency? (2.0 is default)',current);
+  if (typeof(newWeight) == 'undefined' || newWeight == null || isNaN(Number(newWeight)) || Number(newWeight) < 0 || Number(newWeight) > 250) {
+    newWeight = current;
+  }
+  return Number(newWeight);
+}
+
+function updateBankWeight(base) {
+  var newWeight = getBankWeight(FrozenCookies[base]);
   if (newWeight != FrozenCookies[base]) {
     FrozenCookies[base] = newWeight;
     updateLocalStorage();
@@ -815,7 +834,7 @@ function purchaseEfficiency(price, deltaCps, baseDeltaCps, currentCps) {
       efficiency = FrozenCookies.efficiencyWeight * divCps(price, currentCps) + divCps(price, deltaCps);
     }
 	if (FrozenCookies.bankLimiter && maxBank() < price) {
-	  efficiency = efficiency * 2;
+	  efficiency = efficiency * FrozenCookies.bankWeight;
 	}
   }
   return efficiency;
