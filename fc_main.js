@@ -814,7 +814,7 @@ function purchaseEfficiency(price, deltaCps, baseDeltaCps, currentCps) {
     else {
       efficiency = FrozenCookies.efficiencyWeight * divCps(price, currentCps) + divCps(price, deltaCps);
     }
-	if (FrozenCookies.bankLimiter && maxBank() > price) {
+	if (FrozenCookies.bankLimiter && maxBank() < price) {
 	  efficiency = efficiency * 2;
 	}
   }
