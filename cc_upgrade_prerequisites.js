@@ -59,14 +59,14 @@ FrozenCookies.preferenceValues = {
   },
   'instantPrice':{
     'hint':'Purchases costing less than the current CPS are considered extremely efficient.',
-	'display':['Instant Price Off', 'Instant Price On', 'Instant Price Autobuy'],
-	'default':0
+    'display':['Instant Price Off', 'Instant Price On', 'Instant Price Autobuy'],
+    'default':0
   },
   'bankLimiter':{
     'hint':'Purchases costing more than the current bank are considered less (x2) efficient.',
-	'display':['Bank Limiter Off', 'Bank Limiter On'],
-	'default':0
-	'extras':'<a class="option" id="bankWeight" onclick="updateBankWeight(\'bankWeight\');">${bankWeight} bank weight</a>'
+    'display':['Bank Limiter Off', 'Bank Limiter On'],
+    'default':0
+    'extras':'<a class="option" id="bankWeight" onclick="updateBankWeight(\'bankWeight\');">${bankWeight} bank weight</a>'
   },
   'cpsWeight':{
     'hint':'How much affect the current CPS has on efficiency calculations.',
