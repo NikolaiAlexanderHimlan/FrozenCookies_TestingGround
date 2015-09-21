@@ -65,7 +65,7 @@ FrozenCookies.preferenceValues = {
   'bankLimiter':{
     'hint':'Purchases costing more than the current bank are considered less (x2) efficient.',
     'display':['Bank Limiter Off', 'Bank Limiter On'],
-    'default':0
+    'default':0,
     'extras':'<a class="option" id="bankWeight" onclick="updateBankWeight(\'bankWeight\');">${bankWeight} bank weight</a>'
   },
   'cpsWeight':{
