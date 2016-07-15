@@ -15,6 +15,9 @@
 
 *if cost is more than max-bank, double efficiency calculation
 
+*Fix default value for bankWeight so it doesn't give NaN initially.
 
 
 
+
+*Make CPS Weight toggleable.
